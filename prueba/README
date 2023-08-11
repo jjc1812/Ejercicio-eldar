@@ -1,0 +1,34 @@
+Intro:
+
+Para resolver los ejercicios cree un proyecto de java 1.8 con maven y spring boot.
+
+Ejercicio 1:
+
+Cree una carpeta objetos donde puse los 2 objetos base de mis ejercicios, Operacion.java y Tarjeta.java.
+Dentro de la raiz puse el archivo procesamiento.java donde esta el main ejecutable con la prubeba de 2 tarjetas, que devuelve en consola los resultados, uno bueno y otro con errores.
+Para ejecutar el ejercicio 1 hay que usar el comando mvn exec:java -Dexec.mainClass="com.example.prueba.Procesamiento"
+
+Ejercicio 2:
+
+Usando las bondades de spring boot, cree un archivo de controller para las operaciones el cual recibe una tarjeta, usando el objeto tarjeta para el body, y el monto y la marca por parametro, para crear el opbjeto de operacion. Luego se realizan las validaciones y al final se calcula la tasa y se arma la respuesta con base al DTO de operacion. Por ultimo de devuelve el DTO compuesto por tasa, marca e importe.
+mvn spring-boot:run para ejecutar el proyecto en localhost 8080.
+ejemplo de curl:
+curl --location 'http://localhost:8080/procesamiento?marca=VISA&importe=800' \
+--header 'Content-Type: application/json' \
+--data '{
+    "marca": "VISA",
+    "numero": "1234",
+    "cardholder": "Juan Perez",
+    "fechaVencimiento": "2023-09-01"
+}'
+IMPORTANTE: usar el formato de fecha de tipo americano AÑO-MES-DIA.
+
+Ejercicio 3:
+Se imprimen los 107 registros de la tabla.
+
+Ejercicio 4:
+le falta un retorno por lo que no compila, L_salary no se devuelve dentro del BEGIN por lo que la app no va a compilar.
+
+Ejercicio 5:
+En este caso cree un archivo ejecutable UnirCadenas.java. Primeto ingraso un array y con try catch evaluo si el largo de la cadena supera el limite y si hay algun caracter fuera delos codigo ascii que se indicaron en el ejercicio. Cuando haya un error, dispara una excepcion que imprime el mensaje de error en el catch. Sino se construye una cadena result que almacena cada caracter en minuscula y con los espacios correspondientes, al final se imprime la cadena resultante.
+Para ejecutar el codigo utilizar: mvn exec:java -Dexec.mainClass="com.example.prueba.UnirCadenas"
